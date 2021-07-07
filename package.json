@@ -1,0 +1,19 @@
+{
+  "name": "typescript-intro",
+  "version": "0.1.0",
+  "description": "Intro to Typescript course material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamcee/typescript-intro.git"
+  },
+  "author": "adam.cahan@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamcee/typescript-intro/issues"
+  },
+  "homepage": "https://github.com/adamcee/typescript-intro#readme"
+}

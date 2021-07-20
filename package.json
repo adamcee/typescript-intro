@@ -4,7 +4,8 @@
   "description": "Intro to Typescript course material",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\"",
+    "dev2": "tsc -w & nodemon dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/adamcee/typescript-intro/issues"
   },
-  "homepage": "https://github.com/adamcee/typescript-intro#readme"
+  "homepage": "https://github.com/adamcee/typescript-intro#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "typescript": "^4.3.5"
+  }
 }

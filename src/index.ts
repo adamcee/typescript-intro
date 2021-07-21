@@ -4,24 +4,32 @@ function hello(person: string): string {
 
 console.log(hello('Bob'));
 
-const SUNNY_DAY_MESSAGE: string = "It is beautiful and sunny out today!"
-const NOT_SUNNY_DAY_MESSAGE: string = "It is not sunny out today."
+// Human readable weather description
+const SUNNY = "sunny";
+const CLOUDY = "cloudy";
+const getWeatherDescription = (isSunny: boolean): string => isSunny ? SUNNY : CLOUDY;
 
-// Put function params on separate lines as they get more verbose.
-function sunnyDayMessage(
-    isSunny: boolean, 
-    numberOfSunnyDays: number): string {
+// Describe today's weather
+const getTodaysWeatherDescription = (isSunny: boolean) => `Today is ${getWeatherDescription(isSunny)}`;
 
-  // Checking for our negative case first like this is called a guar.
-  if (!isSunny) {
-    return NOT_SUNNY_DAY_MESSAGE;
-  }
+// Describe the recent weather for some past # of days
+const getRecentWeatherDescription = (isSunny: boolean, numDays: number) => `There have been ${numDays} ${getWeatherDescription(isSunny)}.`
 
-
-  // Because of our guard, we don’t explicitly need an “else” statement.
-  return `${SUNNY_DAY_MESSAGE} There have been ${numberOfSunnyDays} sunny days!`;
+// Describe our weather today and recently.
+function describeTheWeatherToday(
+  isSunny: boolean, 
+  numRecentSunnyDays: number, 
+  numRecentCloudyDays: number): string {
+    const today = getTodaysWeatherDescription(isSunny);
+    const recentSunny = getRecentWeatherDescription(true, numRecentSunnyDays);
+    const recentCloudy = getRecentWeatherDescription(false, numRecentCloudyDays);
+    return `${today} ${recentSunny} ${recentCloudy}`;
 }
 
-let isSunny: boolean = true;
-let numberOfSunnyDays:number = 1;
-console.log(`Hello! ${sunnyDayMessage(isSunny, numberOfSunnyDays)}`);
+const recentWeather: Array<boolean> = [true, false, false, true, true, false, false, false];
+
+const numRecentSunnyDays = recentWeather.filter(f => f == true).length;
+const numRecentCloudyDays = recentWeather.filter(f => f == false).length;
+
+const isSunny = true;
+console.log(describeTheWeatherToday(isSunny, numRecentSunnyDays, numRecentCloudyDays));

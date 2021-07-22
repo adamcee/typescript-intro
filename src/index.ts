@@ -27,7 +27,7 @@ function describeTheWeatherToday(
 
 type DailyForecast = {
   // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-  date: Date,
+  date: string | Date,
   // IMPORTANT - temperature is in farenheight and represented by integers. 72 is 72 degrees farenheight.
   temperature: number,   
   description: WEATHER_DESCRIPTION,
@@ -35,10 +35,12 @@ type DailyForecast = {
   chanceOfRain?: number,
 }
 
-const recentWeather: Array<boolean> = [true, false, false, true, true, false, false, false];
+const forecasts: Array<DailyForecast> = [];
 
+/**
 const numRecentSunnyDays = recentWeather.filter(f => f == true).length;
 const numRecentCloudyDays = recentWeather.filter(f => f == false).length;
 
 const isSunny = true;
 console.log(describeTheWeatherToday(isSunny, numRecentSunnyDays, numRecentCloudyDays));
+**/

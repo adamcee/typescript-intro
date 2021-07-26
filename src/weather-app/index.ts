@@ -1,6 +1,6 @@
+import { WEATHER_DESCRIPTION, DailyForecast } from "./types";
 
 // Human readable weather description
-type WEATHER_DESCRIPTION = "sunny" | "cloudy";
 const getWeatherDescription = (isSunny: boolean): WEATHER_DESCRIPTION => isSunny ? "sunny" : "cloudy";
 
 // Describe today's weather
@@ -20,18 +20,9 @@ export function describeTheWeatherToday(
     return `${today} ${recentSunny} ${recentCloudy}`;
 }
 
-type DailyForecast = {
-  // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
-  date: string | Date,
-  // IMPORTANT - temperature is in farenheight and represented by integers. 72 is 72 degrees farenheight.
-  temperature: number,   
-  description: WEATHER_DESCRIPTION,
-  // IMPORTANT - chanceOfRain is a percentage from 0 - 100 and is represented by integers. 15 is 15% chance of rain. 
-  chanceOfRain?: number,
-}
-
 const forecasts: Array<DailyForecast> = [];
 
+// TODO: Use DailyForecast type
 /**
 const numRecentSunnyDays = recentWeather.filter(f => f == true).length;
 const numRecentCloudyDays = recentWeather.filter(f => f == false).length;

@@ -10,7 +10,7 @@ const getTodaysWeatherDescription = (isSunny: boolean) => `Today is ${getWeather
 const getRecentWeatherDescription = (isSunny: boolean, numDays: number) => `There have been ${numDays} ${getWeatherDescription(isSunny)}.`
 
 // Describe our weather today and recently.
-function describeTheWeatherToday(
+export function describeTheWeatherToday(
   isSunny: boolean, 
   numRecentSunnyDays: number, 
   numRecentCloudyDays: number): string {

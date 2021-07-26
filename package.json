@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/adamcee/typescript-intro#readme",
   "devDependencies": {
+    "@types/node": "^16.4.3",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.12",
     "tsc": "^2.0.3"

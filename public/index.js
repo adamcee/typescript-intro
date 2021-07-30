@@ -11,8 +11,10 @@
  */
 console.log('setSizeScript.js');
 
-var setSize12 = makeSetSize(12, document);
-var setSize14 = makeSetSize(14, document);
+var getDocument = () => document;
+
+var setSize12 = makeSetSize(12, getDocument);
+var setSize14 = makeSetSize(14, getDocument);
 
 console.log('setSize functions created');
 

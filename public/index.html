@@ -3,30 +3,12 @@
 
 <head>
   <meta charset="utf-8">
+  <!--We don't have a favicon; stop the favicon request which will 404-->
+  <!-- See: https://stackoverflow.com/a/38917888 -->
+  <link rel="icon" href="data:,">
   <title>My test page</title>
   <link href="main.css" rel="stylesheet">
-  <script>
-    console.log('beginning of inline JS');
-
-    function makeSizer(size) {
-      console.log('creating makeSizer size ' + size);
-
-      return function () {
-        console.log('calling makeSizer size ' + size);
-        document.body.style.fontSize = size + 'px';
-      };
-    }
-
-    var size12 = makeSizer(12);
-    var size14 = makeSizer(14);
-    var size16 = makeSizer(16);
-
-    console.log('sizer functions created');
-
-    document.getElementById('size-12').onclick = size12;
-    document.getElementById('size-14').onclick = size14;
-    document.getElementById('size-16').onclick = size16;
-  </script>
+  <script src="setSizeScript.js"></script>
 
 </html>
 </head>

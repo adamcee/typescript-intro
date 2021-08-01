@@ -11,19 +11,21 @@
  */
 console.log('setSizeScript.js');
 
-var getDocument = () => document;
+const getDocument = function() { return document; }
 
-var setSize12 = makeSetSize(12, getDocument);
-var setSize14 = makeSetSize(14, getDocument);
+window.addEventListener('DOMContentLoaded', () => {
+  const setSize12 = makeSetSize(12, getDocument);
+  const setSize14 = makeSetSize(14, getDocument);
 
-console.log('setSize functions created');
+  console.log('setSize functions created');
 
-var size12Button = document.getElementById('size-12');
-size12Button.onclick = setSize12();
+  const size12Button = document.getElementById('size-12');
+  size12Button.onclick = setSize12;
 
-document.getElementById('size-14').onclick = setSize14();
+  document.getElementById('size-14').onclick = setSize14;
 
-setOnClickHandlerFor('size-16', makeSetSize(16, document));
+  setOnClickHandlerFor('size-16', makeSetSize(16, getDocument));
+});
 
 /**
  * Set the onclick callback function for element with ID elementID to the function we pass in as an argument.
@@ -32,6 +34,6 @@ setOnClickHandlerFor('size-16', makeSetSize(16, document));
  * @returns null
  */
 function setOnClickHandlerFor(elementID, callback) {
-  console.log(`setting onclick callback function for element with id ${element} to ${callback.toString()}`);
+  console.log(`setting onclick callback function for element with id ${elementID} to ${callback.toString()}`);
   document.getElementById(elementID).onclick = callback;
 }

@@ -26,20 +26,17 @@ const linkedListHead: LinkedListNode = {
 function addToEndOfList(current: LinkedListNode, val: string): LinkedListNode {
     console.log('at node ', current.val);
 
-    if(current.next == null) {
-      const newTail: LinkedListNode = {
-        prev: current,
-        next: null,
-        val: val,
-      };
+    // First, figure out your base case - figure out when we are at the tail.
+    if( /* Fill in logic here checking if we're at the tail */ ) {
+      // When we're at the tail, create the new node, add it to the end of the list, 
+      // and - IMPORTANTLY - return the new tail!
 
-      current.next = newTail;
-
-      return newTail;
     }
 
     // Otherwise, we recurse to get the next node in the linked list
-    return addToEndOfList(current.next, val);
+    else {
+      return addToEndOfList(current.next, val);
+    }
 }
 
 console.log(" ---------------");

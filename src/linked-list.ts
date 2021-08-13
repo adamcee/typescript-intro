@@ -39,17 +39,28 @@ function addToEndOfList(current: LinkedListNode, val: string): LinkedListNode {
     }
 }
 
+/**
+ * These console logs should print something like:
+ * at node a
+ * b
+ * ---------------
+ * at node a
+ * at node b
+ * c
+ * ---------------
+ * at node a
+ * at node b
+ * at node c
+ * d
+ */
 console.log(" ---------------");
-console.log(
-  addToEndOfList(linkedListHead, "b").val
-);
+const tailB = addToEndOfList(linkedListHead, "b");
+console.log(tailB.val);
 
 console.log(" ---------------");
-console.log(
-  addToEndOfList(linkedListHead, "c").val
-);
+const tailC = addToEndOfList(linkedListHead, "c");
+console.log(tailC.val);
 
 console.log(" ---------------");
-console.log(
-  addToEndOfList(linkedListHead, "d").val
-);
+const tailD = addToEndOfList(linkedListHead, "d").val;
+console.log(tailD.val);
